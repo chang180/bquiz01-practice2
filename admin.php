@@ -1,4 +1,4 @@
-﻿<?php include "base.php";?>
+﻿<?php include "base.php"; ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- saved from url=(0068)?do=title -->
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -30,7 +30,7 @@
 				<div id="menuput" class="dbor">
 					<!--主選單放此-->
 					<span class="t botli">後台管理選單</span>
-					<a style="color:#000; font-size:13px; text-decoration:none;" href="?do=admin">
+					<a style="color:#000; font-size:13px; text-decoration:none;" href="?do=title">
 						<div class="mainmu">
 							網站標題管理 </div>
 					</a>
@@ -85,8 +85,11 @@
 					</tbody>
 				</table>
 
-				<?php 
-				include "backend/admin.php";
+				<?php
+				$do = $get['do'] ?? 'title';
+				$file = sprintf("backend/%s.php", $do);
+				include file_exists($file) ? $file : "backend/title.php";
+				// include "backend/title.php";
 				?>
 
 			</div>
