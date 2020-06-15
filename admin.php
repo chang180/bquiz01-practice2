@@ -21,10 +21,7 @@
 	</div>
 	<iframe style="display:none;" name="back" id="back"></iframe>
 	<div id="main">
-		<a title="" href="?">
-			<div class="ti" style="background:url('use/'); background-size:cover;"></div>
-			<!--標題-->
-		</a>
+		<?php include "header.php";?>
 		<div id="ms">
 			<div id="lf" style="float:left;">
 				<div id="menuput" class="dbor">
@@ -86,7 +83,7 @@
 				</table>
 
 				<?php
-				$do = $get['do'] ?? 'title';
+				$do = $_GET['do'] ?? 'title';
 				$file = sprintf("backend/%s.php", $do);
 				include file_exists($file) ? $file : "backend/title.php";
 				// include "backend/title.php";
@@ -111,9 +108,7 @@
 			</script>
 		</div>
 		<div style="clear:both;"></div>
-		<div style="width:1024px; left:0px; position:relative; background:#FC3; margin-top:4px; height:123px; display:block;">
-			<span class="t" style="line-height:123px;"></span>
-		</div>
+		<?php include "footer.php";?>
 	</div>
 
 </body>
