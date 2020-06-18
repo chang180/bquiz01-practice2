@@ -21,7 +21,7 @@
                     <tr class="cent">
                         <td><textarea name="text[]" cols="60" rows="5"><?= $row['text']; ?></textarea></td>
                         <td><input type="checkbox" name="sh[]" value="<?= $row['id']; ?>" <?= $isChk; ?>></td>
-                        <td><input type="checkbox" name="del[]" value="$<?= $row['id']; ?>"></td>
+                        <td><input type="checkbox" name="del[]" value="<?= $row['id']; ?>"></td>
                         <input type="hidden" name="id[]" value="<?= $row['id']; ?>">
                     </tr>
 

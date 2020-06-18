@@ -20,11 +20,11 @@
 
                 ?>
                     <tr class="cent">
-                        <td><input type="text" name="name[]" value="<?= $row['acc']; ?>"></td>
-                        <td><input type="text" name="text[]" value="<?= $row['pw']; ?>"></td>
+                        <td><input type="text" name="name[]" value="<?= $row['name']; ?>"></td>
+                        <td><input type="text" name="text[]" value="<?= $row['text']; ?>"></td>
                         <td><?=$Menu->count(['parent'=>$row['id']]);?></td>
-                        <td><input type="checkbox" name="sh[]" value="$<?= $row['id']; ?> <?=($row==1)?"checked":"";?>"></td>
-                        <td><input type="checkbox" name="del[]" value="$<?= $row['id']; ?>"></td>
+                        <td><input type="checkbox" name="sh[]" value="<?= $row['id']; ?>" <?=($row['sh']==1)?"checked":"";?>></td>
+                        <td><input type="checkbox" name="del[]" value="<?= $row['id']; ?>"></td>
                         <td><input type="button" onclick="op('#cover','#cvr','modal/sub<?= $table; ?>.php?id=<?=$row['id'];?>&table=<?= $table; ?>')" value="編輯次選單"></td>
                         <input type="hidden" name="id[]" value="<?= $row['id']; ?>">
                     </tr>

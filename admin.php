@@ -82,6 +82,7 @@
 
 				<?php
 				$do = $_GET['do'] ?? 'title';
+				$table=$do;
 				$file = sprintf("backend/%s.php", $do);
 				// echo $file;
 				include file_exists($file) ? $file : "backend/title.php";

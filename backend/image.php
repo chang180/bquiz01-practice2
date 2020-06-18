@@ -21,7 +21,7 @@
                     <tr class="cent">
                         <td><img src="img/<?= $row['name']; ?>" style="width:150px;height:80px;"></td>
                         <td><input type="checkbox" name="sh[]" value="<?= $row['id']; ?>" <?= $isChk; ?>></td>
-                        <td><input type="checkbox" name="del[]" value="$<?= $row['id']; ?>"></td>
+                        <td><input type="checkbox" name="del[]" value="<?= $row['id']; ?>"></td>
                         <td><input type="button" value="更換圖片" onclick="op('#cover','#cvr','modal/upload_<?= $table; ?>.php?id=<?= $row['id']; ?>&table=<?= $table; ?>')"></td>
                         <input type="hidden" name="id[]" value="<?= $row['id']; ?>">
                     </tr>
