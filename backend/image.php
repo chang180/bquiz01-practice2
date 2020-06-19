@@ -14,13 +14,13 @@
                 $table = $do;
                 $db = new DB($table);
 
-                $total=$db->count('');
-                $div=3;
-                $pages=ceil($total/$div);
-                $now=$_GET['p']??1;
-                $start=($now-1)*$div;
+                $total = $db->count('');
+                $div = 3;
+                $pages = ceil($total / $div);
+                $now = $_GET['p'] ?? 1;
+                $start = ($now - 1) * $div;
 
-                $rows = $db->all([]," limit $start,$div");
+                $rows = $db->all([], " limit $start,$div");
                 foreach ($rows as $row) {
                     $isChk = ($row['sh']) ? "checked" : 0;
 
@@ -41,19 +41,19 @@
         </table>
 
         <div class="cent">
-<?php
-if(($now-1)>0){
-    echo "<a href='admin.php?do=image&p=".($now-1)."'> < </a>";
-}
+            <?php
+            if (($now - 1) > 0) {
+                echo "<a href='admin.php?do=image&p=" . ($now - 1) . "'> < </a>";
+            }
 
-for($i=1;$i<=$pages;$i++){
-    $fontsize=($now==$i)?"24px":"16px";
-    echo "<a href='admin.php?do=image&p=$i' style='font-size:$fontsize'> $i </a>";
-}
-                if(($now+1)<$pages){
-                    echo "<a href='admin.php?do=image&p=".($now+1)."'> > </a>";
-                }
-?>
+            for ($i = 1; $i <= $pages; $i++) {
+                $fontsize = ($now == $i) ? "24px" : "16px";
+                echo "<a href='admin.php?do=image&p=$i' style='font-size:$fontsize'> $i </a>";
+            }
+            if (($now + 1) <= $pages) {
+                echo "<a href='admin.php?do=image&p=" . ($now + 1) . "'> > </a>";
+            }
+            ?>
 
 
         </div>

@@ -39,27 +39,32 @@
 			include file_exists($file) ? $file : "front/main.php";
 			?>
 
-			<div id="alt" style="position: absolute; width: 350px; min-height: 100px; word-break:break-all; text-align:justify;  background-color: rgb(255, 255, 204); top: 50px; left: 400px; z-index: 99; display: none; padding: 5px; border: 3px double rgb(255, 153, 0); background-position: initial initial; background-repeat: initial initial;"></div>
-			<script>
-				$(".sswww").hover(
-					function() {
-						$("#alt").html("" + $(this).children(".all").html() + "").css({
-							"top": $(this).offset().top - 50
-						})
-						$("#alt").show()
-					}
-				)
-				$(".sswww").mouseout(
-					function() {
-						$("#alt").hide()
-					}
-				)
-			</script>
 			<div class="di di ad" style="height:540px; width:23%; padding:0px; margin-left:22px; float:left; ">
 				<!--右邊-->
 				<button style="width:100%; margin-left:auto; margin-right:auto; margin-top:2px; height:50px;" onclick="lo('?do=admin')">管理登入</button>
-				<div style="width:89%; height:480px;" class="dbor">
+				<div style="width:89%; height:480px;" class="dbor cent">
 					<span class="t botli">校園映象區</span>
+<div><img src="icon/up.jpg"></div>
+<div>
+<?php
+$imgs=$Image->all(['sh'=>1]);
+// var_dump($imgs);
+foreach($imgs as $k=>$i){
+	// echo $i['name'];
+echo "<div>";
+echo "<img src='img/".$i['name']."' style='width:150px;height:103px;border:3px solid orange;margin:1px;'>";
+echo "</div>";
+
+}
+
+
+?>
+</div>
+<div><img src="icon/dn.jpg"></div>
+
+
+
+
 					<script>
 						var nowpage = 0,
 							num = 0;

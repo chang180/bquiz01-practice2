@@ -15,11 +15,11 @@
                 $db = new DB($table);
 
                 $total = $db->count('');
-                $div = 4;
+                $div = 5;
                 $pages = ceil($total / $div);
                 $now = $_GET['p'] ?? 1;
                 $start = ($now - 1) * $div;
-                $rows = $db->all([]," limit $start,$div");
+                $rows = $db->all([], " limit $start,$div");
                 foreach ($rows as $row) {
                     $isChk = ($row['sh']) ? "checked" : 0;
 
@@ -50,7 +50,7 @@
                 $fontsize = ($now == $i) ? "24px" : "16px";
                 echo "<a href='admin.php?do=news&p=$i' style='font-size:$fontsize'> $i </a>";
             }
-            if (($now + 1) < $pages) {
+            if (($now + 1) <= $pages) {
                 echo "<a href='admin.php?do=news&p=" . ($now + 1) . "'> > </a>";
             }
             ?>
