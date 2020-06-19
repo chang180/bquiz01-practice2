@@ -1,4 +1,4 @@
-<a title="科技大學" href="./index.php">
+<a title="<?=$Title->find(['sh'=>1])['text'];?>" href="./index.php">
 	<div class="ti" style="background:url('./img/<?= $Title->find(['sh' => 1])['name']; ?>'); background-size:cover;"></div>
 	<!--標題-->
 </a>

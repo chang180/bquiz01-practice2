@@ -21,7 +21,7 @@ class DB
     {
         $sql = "SELECT * FROM $this->table ";
         if (!empty($arg[0]) && is_array($arg[0])) {
-            foreach ($arg as $key => $value) $tmp[] = sprintf("`%s`='%s'", $key, $value);
+            foreach ($arg[0] as $key => $value) $tmp[] = sprintf("`%s`='%s'", $key, $value);
             $sql .= " WHERE " . implode(" && ", $tmp);
         }
         if (!empty($arg[1])) $sql .= $arg[1];
@@ -59,6 +59,7 @@ class DB
             $sql .= " WHERE " . implode(" && ", $tmp);
         }
         if (!empty($arg[1])) $sql .= $arg[1];
+        // echo $sql;
         return $this->pdo->query($sql)->fetchColumn();
     }
 
