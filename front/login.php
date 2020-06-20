@@ -1,8 +1,19 @@
 <div class="di" style="height:540px; border:#999 1px solid; width:53.2%; margin:2px 0px 0px 0px; float:left; position:relative; left:20px;">
-	<?php include "marquee.php"; ?>
+	<?php 
+	include "marquee.php"; 
+	if(!empty($_POST['acc']) && !empty($_POST['pw'])){
+		if($Admin->count(['acc'=>$_POST['acc'],'pw'=>$_POST['pw']])>=1) to("admin.php");
+		else echo "<script>alert('帳號或密碼錯誤');</script>";
+	}
+	
+	
+	?>
+
+
+
 	<div style="height:32px; display:block;"></div>
 	<!--正中央-->
-	<form method="post" action="../api/login.php" method="post">
+	<form method="post" action="?do=login" method="post">
 		<p class="t botli">管理員登入區</p>
 		<p class="cent">帳號 ： <input name="acc" type="text"></p>
 		<p class="cent">密碼 ： <input name="pw" type="password"></p>
