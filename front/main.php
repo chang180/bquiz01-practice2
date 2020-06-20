@@ -38,8 +38,8 @@ foreach ($news as $k=>$n){
 				<?php
 				$mvs = $Mvim->all(['sh' => 1]);
 				$tmp = [];
-				foreach ($mvs as $m) array_push($tmp, "img/" . $m['name']);
-				echo "'" . implode("','", $tmp) . "'";
+				foreach ($mvs as $m) array_push($tmp, "'img/" . $m['name']."'");
+				echo implode(",", $tmp);
 				?>
 			];
 			var now = 0;
@@ -60,7 +60,7 @@ foreach ($news as $k=>$n){
 		<script>
 			$(".ssaa li").hover(
 				function() {
-					$("#altt").html("<pre>" + $(this).children(".all").html() + "</pre>")
+					$("#altt").html("" + $(this).children(".all").html() + "")
 					$("#altt").show()
 				}
 			)
